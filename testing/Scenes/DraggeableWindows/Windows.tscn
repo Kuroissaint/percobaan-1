@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://game"]
+
+[ext_resource type="Script" uid="uid://43ns8a1uow08" path="res://scripts/DraggeableWindows/Windows.gd" id="1_e6hrq"]
+[ext_resource type="Script" uid="uid://bfove7bo2ysjl" path="res://scripts/DraggeableWindows/PaperGetter.gd" id="2_8qojl"]
+[ext_resource type="PackedScene" uid="uid://paper" path="res://scenes/DraggeableWindows/Paper.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="4_8qojl"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="5_xmqra"]
+[ext_resource type="Script" uid="uid://bkx5cj7gkaanw" path="res://npc/npc_base.gd" id="6_lenwp"]
+[ext_resource type="Resource" uid="uid://vnlqp00v1gbp" path="res://dialogues/npc.dialogue" id="7_crmf7"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 2.52616
+
+[node name="Game" type="Node2D" unique_id=838404067]
+script = ExtResource("1_e6hrq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1962304141]
+offset_right = 1283.0
+offset_bottom = 716.0
+color = Color(0.6200709, 0.3122109, 0.04274164, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=483251562]
+offset_top = 495.0
+offset_right = 874.0
+offset_bottom = 716.0
+color = Color(1, 0.27058825, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1169919527]
+offset_left = 874.0
+offset_right = 1283.0
+offset_bottom = 716.0
+color = Color(0.18039216, 1, 1, 1)
+
+[node name="PaperGetter" type="Area2D" parent="." unique_id=2060432699]
+collision_mask = 2
+script = ExtResource("2_8qojl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaperGetter" unique_id=187547099]
+shape = SubResource("1")
+
+[node name="Paper2" parent="." unique_id=2042650941 instance=ExtResource("3")]
+position = Vector2(1075, 495)
+
+[node name="Paper3" parent="." unique_id=2044349208 instance=ExtResource("3")]
+position = Vector2(1036, 214)
+
+[node name="Paper" parent="." unique_id=29938200 instance=ExtResource("3")]
+position = Vector2(1169, 270)
+
+[node name="Button" type="Button" parent="." unique_id=1512792491]
+offset_left = 368.0
+offset_top = 356.0
+offset_right = 457.0
+offset_bottom = 387.0
+text = "Pelanggan"
+script = ExtResource("6_lenwp")
+dialogue_resource = ExtResource("7_crmf7")
+race = "Elf"

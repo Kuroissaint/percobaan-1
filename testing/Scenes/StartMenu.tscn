@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bngjauj06hv8u"]
+
+[ext_resource type="Script" uid="uid://dr8jx24ybr2tl" path="res://scripts/coba2/start_menu.gd" id="1_dvnd1"]
+
+[node name="StartMenu" type="Node2D" unique_id=2080313093]
+script = ExtResource("1_dvnd1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=33877837]
+offset_right = 1278.0
+offset_bottom = 717.0
+
+[node name="PlayButton" type="Button" parent="." unique_id=1606342141]
+offset_left = 451.0
+offset_top = 328.0
+offset_right = 805.0
+offset_bottom = 381.0
+
+[node name="SettingButton" type="Button" parent="." unique_id=2067620449]
+offset_left = 451.0
+offset_top = 439.0
+offset_right = 805.0
+offset_bottom = 492.0
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]

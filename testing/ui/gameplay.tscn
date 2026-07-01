@@ -1,0 +1,349 @@
+[gd_scene format=3 uid="uid://vo3d1ljqoous"]
+
+[ext_resource type="Script" uid="uid://drva8r1s8oyn6" path="res://scripts/GameManager.gd" id="1_gmgr"]
+[ext_resource type="Script" path="res://scripts/ui_gameplay.gd" id="2_ui"]
+[ext_resource type="Texture2D" path="res://assets/background/background.png" id="3_bg"]
+[ext_resource type="Texture2D" path="res://assets/character/temp/marisa.png" id="4_char"]
+
+; ── StyleBoxes ──────────────────────────────────────────────────────────────
+
+; HUD: score pill (top-center)
+[sub_resource type="StyleBoxFlat" id="SB_score"]
+bg_color = Color(0.05, 0.05, 0.10, 0.90)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+; HUD: state hint bar
+[sub_resource type="StyleBoxFlat" id="SB_state"]
+bg_color = Color(0.0, 0.0, 0.0, 0.55)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+content_margin_left = 12.0
+content_margin_right = 12.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+; DialogBox: customer panel background
+[sub_resource type="StyleBoxFlat" id="SB_dialog"]
+bg_color = Color(0.10, 0.08, 0.14, 0.97)
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_left = 0
+corner_radius_bottom_right = 0
+border_width_top = 2
+border_color = Color(0.35, 0.28, 0.50, 1.0)
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
+; DialogBox: order sub-panel
+[sub_resource type="StyleBoxFlat" id="SB_order"]
+bg_color = Color(0.12, 0.12, 0.20, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+border_width_left = 2
+border_width_right = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.40, 0.35, 0.60, 1.0)
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+
+; DialogBox: feedback result pill
+[sub_resource type="StyleBoxFlat" id="SB_feedback"]
+bg_color = Color(0.20, 0.55, 0.20, 0.92)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+
+; DragableWindows: right-panel background
+[sub_resource type="StyleBoxFlat" id="SB_right"]
+bg_color = Color(0.08, 0.08, 0.13, 0.96)
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_left = 0
+corner_radius_bottom_right = 0
+border_width_left = 2
+border_color = Color(0.25, 0.20, 0.40, 1.0)
+content_margin_left = 12.0
+content_margin_right = 12.0
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+
+; ── Scene root ──────────────────────────────────────────────────────────────
+
+[node name="Gameplay" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_gmgr")
+
+; ── UILayer — carries the script and all UI children ────────────────────────
+[node name="UILayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_ui")
+
+; ════════════════════════════════════════════════════════════════════════════
+; IzakayaView  (0, 0 → 919, 532)
+; Background image fills the left view; character sprite sits bottom-center.
+; ════════════════════════════════════════════════════════════════════════════
+
+[node name="IzakayaView" type="Control" parent="UILayer"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 919.0
+offset_bottom = 532.0
+clip_contents = true
+
+; Full-area background texture
+[node name="Background" type="TextureRect" parent="UILayer/IzakayaView"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 919.0
+offset_bottom = 532.0
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 6
+
+; Character sprite — bottom-center of the IzakayaView area
+[node name="CharacterSprite" type="TextureRect" parent="UILayer/IzakayaView"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -440.0
+offset_right = 150.0
+offset_bottom = -10.0
+texture = ExtResource("4_char")
+expand_mode = 1
+stretch_mode = 5
+
+; ════════════════════════════════════════════════════════════════════════════
+; DialogBox  (0, 532 → 919, 718)
+; Customer species + description + order + feedback.
+; ════════════════════════════════════════════════════════════════════════════
+
+[node name="DialogBox" type="PanelContainer" parent="UILayer"]
+offset_left = 0.0
+offset_top = 532.0
+offset_right = 919.0
+offset_bottom = 718.0
+theme_override_styles/panel = SubResource("SB_dialog")
+
+[node name="DialogHBox" type="HBoxContainer" parent="UILayer/DialogBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+; ── Left column: species name + description ──────────────────────────────────
+[node name="CustomerCol" type="VBoxContainer" parent="UILayer/DialogBox/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="CustomerSpeciesLabel" type="Label" parent="UILayer/DialogBox/DialogHBox/CustomerCol"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "..."
+theme_override_font_sizes/font_size = 26
+
+[node name="CustomerDescLabel" type="Label" parent="UILayer/DialogBox/DialogHBox/CustomerCol"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+modulate = Color(0.75, 0.75, 0.82, 1.0)
+
+; ── VSeparator between columns ───────────────────────────────────────────────
+[node name="VSep" type="VSeparator" parent="UILayer/DialogBox/DialogHBox"]
+layout_mode = 2
+
+; ── Middle column: order (icon + name) ───────────────────────────────────────
+[node name="OrderCol" type="VBoxContainer" parent="UILayer/DialogBox/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 6
+
+[node name="WantsTitle" type="Label" parent="UILayer/DialogBox/DialogHBox/OrderCol"]
+layout_mode = 2
+text = "WANTS"
+theme_override_font_sizes/font_size = 10
+modulate = Color(0.60, 0.60, 0.65, 1.0)
+
+[node name="OrderPanel" type="PanelContainer" parent="UILayer/DialogBox/DialogHBox/OrderCol"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("SB_order")
+
+[node name="OrderHBox" type="HBoxContainer" parent="UILayer/DialogBox/DialogHBox/OrderCol/OrderPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OrderIcon" type="TextureRect" parent="UILayer/DialogBox/DialogHBox/OrderCol/OrderPanel/OrderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56.0, 56.0)
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OrderLabel" type="Label" parent="UILayer/DialogBox/DialogHBox/OrderCol/OrderPanel/OrderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "..."
+theme_override_font_sizes/font_size = 15
+
+; ── VSeparator ───────────────────────────────────────────────────────────────
+[node name="VSep2" type="VSeparator" parent="UILayer/DialogBox/DialogHBox"]
+layout_mode = 2
+
+; ── Right column: feedback result ────────────────────────────────────────────
+[node name="FeedbackCol" type="VBoxContainer" parent="UILayer/DialogBox/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="FeedbackPanel" type="PanelContainer" parent="UILayer/DialogBox/DialogHBox/FeedbackCol"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("SB_feedback")
+
+[node name="FeedbackLabel" type="Label" parent="UILayer/DialogBox/DialogHBox/FeedbackCol/FeedbackPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 13
+
+; ════════════════════════════════════════════════════════════════════════════
+; DragableWindows  (919, 0 → 1280, 718)
+; Menu list + Serve / Skip buttons.  ExpandButton kept as visual chrome.
+; ════════════════════════════════════════════════════════════════════════════
+
+[node name="DragableWindows" type="PanelContainer" parent="UILayer"]
+offset_left = 919.0
+offset_top = 0.0
+offset_right = 1280.0
+offset_bottom = 718.0
+theme_override_styles/panel = SubResource("SB_right")
+
+[node name="RightVBox" type="VBoxContainer" parent="UILayer/DragableWindows"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+; Expand toggle (visual only — kept from the original wireframe)
+[node name="ExpandButton" type="Button" parent="UILayer/DragableWindows/RightVBox"]
+layout_mode = 2
+text = "☰  Menu"
+focus_mode = 0
+theme_override_font_sizes/font_size = 13
+modulate = Color(0.70, 0.70, 0.90, 1.0)
+
+[node name="MenuTitle" type="Label" parent="UILayer/DragableWindows/RightVBox"]
+layout_mode = 2
+text = "MENU"
+theme_override_font_sizes/font_size = 14
+modulate = Color(0.60, 0.60, 0.65, 1.0)
+
+[node name="MenuScroll" type="ScrollContainer" parent="UILayer/DragableWindows/RightVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0.0, 380.0)
+
+[node name="MenuGrid" type="GridContainer" parent="UILayer/DragableWindows/RightVBox/MenuScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+
+[node name="MenuSep" type="HSeparator" parent="UILayer/DragableWindows/RightVBox"]
+layout_mode = 2
+
+[node name="SelectedLabel" type="Label" parent="UILayer/DragableWindows/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Selected: —"
+theme_override_font_sizes/font_size = 12
+modulate = Color(0.80, 0.92, 0.80, 1.0)
+
+[node name="ServeButton" type="Button" parent="UILayer/DragableWindows/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "✔  Serve"
+custom_minimum_size = Vector2(0.0, 44.0)
+theme_override_font_sizes/font_size = 16
+
+[node name="SkipButton" type="Button" parent="UILayer/DragableWindows/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Skip Customer"
+custom_minimum_size = Vector2(0.0, 34.0)
+theme_override_font_sizes/font_size = 13
+
+; ════════════════════════════════════════════════════════════════════════════
+; HUD overlay — floated above everything via a second CanvasLayer
+; Score pill + state hint bar, top-center of the IzakayaView area.
+; ════════════════════════════════════════════════════════════════════════════
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ScoreBar" type="PanelContainer" parent="HUD"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 310.0
+offset_top = 8.0
+offset_right = 610.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("SB_score")
+
+[node name="ScoreLabel" type="Label" parent="HUD/ScoreBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Score: 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+
+[node name="StateBar" type="PanelContainer" parent="HUD"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 210.0
+offset_top = 52.0
+offset_right = 709.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("SB_state")
+
+[node name="StateLabel" type="Label" parent="HUD/StateBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Waiting for customer..."
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 13
+modulate = Color(0.85, 0.85, 0.60, 1.0)

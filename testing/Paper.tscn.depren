@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cyle3frst6brw"]
+
+[ext_resource type="Script" uid="uid://c7ip7idu31gts" path="res://ui/Paper.gd" id="1_573hd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_06ww8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcbjx"]
+size = Vector2(216, 323)
+
+[node name="Paper" type="CharacterBody2D" unique_id=302184289]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_573hd")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2134608764]
+position = Vector2(98, 151.49998)
+scale = Vector2(216, 322.99997)
+texture = SubResource("CanvasTexture_06ww8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=412639826]
+position = Vector2(98, 151.5)
+shape = SubResource("RectangleShape2D_jcbjx")
+debug_color = Color(0.555539, 0.49150592, 0.72713315, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1687723039]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="." unique_id=1561363143]
+offset_right = 40.0
+offset_bottom = 23.0

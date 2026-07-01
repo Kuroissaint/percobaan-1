@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://brpqvok5mtm0q"]
+
+[sub_resource type="GDScript" id="GDScript_2i8bf"]
+script/source = "extends Node2D
+
+var selected := false
+var mouse_offset := Vector2.ZERO
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			var global_rect = Rect2($ColorRect.global_position, $ColorRect.size)
+			if global_rect.has_point(get_global_mouse_position()):
+				selected = true
+				mouse_offset = global_position - get_global_mouse_position()
+		else:
+			selected = false
+
+	elif event is InputEventMouseMotion and selected:
+		global_position = get_global_mouse_position() + mouse_offset
+"
+
+[node name="DraggableBox" type="Node2D" unique_id=759120915]
+script = SubResource("GDScript_2i8bf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1227880002]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.14901961, 1, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1054111737]
+offset_right = 40.0
+offset_bottom = 23.0

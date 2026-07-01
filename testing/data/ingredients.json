@@ -1,0 +1,207 @@
+{
+	"meat": {
+		"display_name": "Meat",
+		"tags": [
+			"animal",
+			"meat"
+		]
+	},
+	"flour": {
+		"display_name": "Flour",
+		"tags": [
+			"plant"
+		]
+	},
+	"vegetables": {
+		"display_name": "Vegetables",
+		"tags": [
+			"plant"
+		]
+	},
+	"water": {
+		"display_name": "Water",
+		"tags": [
+			"water"
+		]
+	},
+	"milk": {
+		"display_name": "Milk",
+		"tags": [
+			"animal",
+			"dairy"
+		]
+	},
+	"egg": {
+		"display_name": "Egg",
+		"tags": [
+			"animal",
+			"egg"
+		]
+	},
+	"broth": {
+		"display_name": "Broth",
+		"tags": [
+			"liquid"
+		]
+	},
+	"shrimp_crackers": {
+		"display_name": "Shrimp Crackers",
+		"tags": [
+			"animal",
+			"seafood"
+		]
+	},
+	"rice": {
+		"display_name": "Rice",
+		"tags": [
+			"plant"
+		]
+	},
+	"chili": {
+		"display_name": "Chili",
+		"tags": [
+			"plant",
+			"spicy"
+		]
+	},
+	"salt": {
+		"display_name": "Salt",
+		"tags": []
+	},
+	"sugar": {
+		"display_name": "Sugar",
+		"tags": [
+			"sweet"
+		]
+	},
+	"ketchup": {
+		"display_name": "Ketchup",
+		"tags": [
+			"condiment"
+		]
+	},
+	"fire": {
+		"display_name": "Fire",
+		"tags": [
+			"fire"
+		]
+	},
+	"holy_water": {
+		"display_name": "Holy Water",
+		"tags": [
+			"water",
+			"holy"
+		]
+	},
+	"potato": {
+		"display_name": "Potato",
+		"tags": [
+			"plant"
+		]
+	},
+	"oil": {
+		"display_name": "Oil",
+		"tags": []
+	},
+	"pepper": {
+		"display_name": "Pepper",
+		"tags": [
+			"spicy"
+		]
+	},
+	"sausage": {
+		"display_name": "Sausage",
+		"tags": [
+			"animal",
+			"meat",
+			"processed"
+		]
+	},
+	"chicken_meat": {
+		"display_name": "Chicken Meat",
+		"tags": [
+			"animal",
+			"meat",
+			"bird"
+		]
+	},
+	"green_onions": {
+		"display_name": "Green Onions",
+		"tags": [
+			"plant"
+		]
+	},
+	"herb": {
+		"display_name": "Herb",
+		"tags": [
+			"plant"
+		]
+	},
+	"ice": {
+		"display_name": "Ice",
+		"tags": [
+			"water",
+			"cold",
+			"frozen"
+		]
+	},
+	"sun_dried_fruit": {
+		"display_name": "Sun-Dried Fruit",
+		"tags": [
+			"sweet",
+			"sky_fruit",
+			"sun_touched"
+		]
+	},
+	"tundra_meat": {
+		"display_name": "Tundra Meat",
+		"tags": [
+			"meat",
+			"fat",
+			"warm"
+		]
+	},
+	"deep_sea_crab": {
+		"display_name": "Deep Sea Crab",
+		"tags": [
+			"seafood",
+			"crustacean"
+		]
+	},
+	"forest_mushroom": {
+		"display_name": "Forest Mushroom",
+		"tags": [
+			"fungi",
+			"forest"
+		]
+	},
+	"sun_rice": {
+		"display_name": "Sun Rice",
+		"tags": [
+			"plant",
+			"sun_touched"
+		]
+	},
+	"decorative_foam": {
+		"display_name": "Decorative Foam",
+		"tags": [
+			"foam",
+			"fancy_presentation"
+		]
+	},
+	"wooden_platter": {
+		"display_name": "Wooden Platter",
+		"tags": [
+			"wood",
+			"wooden_platter"
+		]
+	},
+	"sky_bird_meat": {
+		"display_name": "Sky Bird Meat",
+		"tags": [
+			"meat",
+			"poultry",
+			"avian"
+		]
+	}
+}

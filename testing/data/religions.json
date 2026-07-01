@@ -1,0 +1,43 @@
+{
+	"religions": [
+		{
+			"id": "cult_of_the_eternal_flame",
+			"display_name": "Cult of the Eternal Flame",
+			"prohibited_tags": [
+				"cold",
+				"ice",
+				"frozen"
+			],
+			"lore": "Ice is seen as a manifestation of the 'Great Void.'"
+		},
+		{
+			"id": "children_of_the_tide",
+			"display_name": "Children of the Tide",
+			"prohibited_tags": [
+				"seafood",
+				"crustacean",
+				"fish"
+			],
+			"lore": "One does not eat their brothers of the deep."
+		},
+		{
+			"id": "order_of_the_sun",
+			"display_name": "The Order of the Sun",
+			"prohibited_tags": [
+				"underground",
+				"root",
+				"darkness_grown"
+			],
+			"lore": "Only food touched by direct sunlight is pure."
+		},
+		{
+			"id": "path_of_the_silent_forest",
+			"display_name": "Path of the Silent Forest",
+			"prohibited_tags": [
+				"fungi",
+				"mushroom"
+			],
+			"lore": "Mycelium are considered the 'nervous system' of the woods."
+		}
+	]
+}

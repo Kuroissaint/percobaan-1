@@ -1,0 +1,66 @@
+{
+	"nationalities": [
+		{
+			"id": "highland_empire",
+			"display_name": "Highland Empire",
+			"preferred_tags": [
+				"sweet",
+				"tea",
+				"pastry"
+			],
+			"prohibited_tags": [],
+			"social_faux_pas_tags": [
+				"wooden_platter"
+			],
+			"lore": "A refined mountain civilization that values elegance in dining presentation."
+		},
+		{
+			"id": "frozen_tundra",
+			"display_name": "Frozen Tundra",
+			"preferred_tags": [
+				"fat",
+				"meat",
+				"hot",
+				"broth"
+			],
+			"prohibited_tags": [
+				"cold",
+				"raw",
+				"vegetable_raw"
+			],
+			"social_faux_pas_tags": [],
+			"lore": "Survival-based culture that prioritizes caloric density and warmth."
+		},
+		{
+			"id": "iron_citadel",
+			"display_name": "Iron Citadel",
+			"preferred_tags": [
+				"solid",
+				"compact",
+				"dense"
+			],
+			"prohibited_tags": [
+				"foam",
+				"garnish_decorative",
+				"fancy_presentation"
+			],
+			"social_faux_pas_tags": [],
+			"lore": "A militaristic society that values practicality over aesthetics."
+		},
+		{
+			"id": "floating_isles",
+			"display_name": "Floating Isles",
+			"preferred_tags": [
+				"poultry",
+				"avian",
+				"sky_fruit"
+			],
+			"prohibited_tags": [
+				"ground_meat",
+				"earth_dwelling"
+			],
+			"social_faux_pas_tags": [],
+			"lore": "Sky-dwelling culture that sees ground food as impure."
+		}
+	]
+}

@@ -1,0 +1,340 @@
+{
+	"foods": [
+		{
+			"id": "tacos",
+			"display_name": "Tacos",
+			"ingredients": [
+				"meat",
+				"flour",
+				"vegetables",
+				"water",
+				"milk"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "ramen",
+			"display_name": "Ramen",
+			"ingredients": [
+				"flour",
+				"egg",
+				"vegetables",
+				"broth",
+				"shrimp_crackers"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "hamburger_steak",
+			"display_name": "Hamburger Steak",
+			"ingredients": [
+				"meat",
+				"flour",
+				"rice",
+				"vegetables",
+				"chili",
+				"salt",
+				"sugar",
+				"ketchup"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "fire",
+			"display_name": "Fire",
+			"ingredients": [
+				"fire"
+			],
+			"required_customer_permits": [
+				"open_flame_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "cake",
+			"display_name": "Cake",
+			"ingredients": [
+				"flour",
+				"egg",
+				"sugar",
+				"milk",
+				"water"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "holy_water",
+			"display_name": "Water",
+			"ingredients": [
+				"holy_water"
+			],
+			"required_customer_permits": [
+				"holy_substance_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "english_breakfast",
+			"display_name": "English Breakfast",
+			"ingredients": [
+				"sausage",
+				"potato",
+				"egg",
+				"oil",
+				"salt",
+				"pepper"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "katsudon",
+			"display_name": "Katsudon",
+			"ingredients": [
+				"chicken_meat",
+				"rice",
+				"egg",
+				"green_onions"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "soda",
+			"display_name": "Soda",
+			"ingredients": [
+				"herb",
+				"holy_water"
+			],
+			"required_customer_permits": [
+				"holy_substance_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "whole_cow_roast",
+			"display_name": "Whole Cow Roast",
+			"ingredients": [
+				"meat"
+			],
+			"required_customer_permits": [
+				"large_predator_permit"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "giant_boar_platter",
+			"display_name": "Giant Boar Platter",
+			"ingredients": [
+				"meat"
+			],
+			"required_customer_permits": [
+				"large_predator_permit"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "dragon_breath_chili",
+			"display_name": "Dragon Breath Chili",
+			"ingredients": [
+				"chili",
+				"fire",
+				"meat"
+			],
+			"required_customer_permits": [
+				"open_flame_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "saints_blessed_cake",
+			"display_name": "Saint's Blessed Cake",
+			"ingredients": [
+				"flour",
+				"egg",
+				"milk",
+				"sugar",
+				"holy_water"
+			],
+			"required_customer_permits": [
+				"holy_substance_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "zombie_brain_stew",
+			"display_name": "Zombie Brain Stew",
+			"ingredients": [
+				"broth"
+			],
+			"required_customer_permits": [
+				"necromantic_consumption_waiver"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "skeleton_bone_broth",
+			"display_name": "Skeleton Bone Broth",
+			"ingredients": [
+				"broth"
+			],
+			"required_customer_permits": [
+				"necromantic_consumption_waiver"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "bottled_soul",
+			"display_name": "Bottled Soul",
+			"ingredients": [],
+			"required_customer_permits": [
+				"soul_consumption_authorization"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "phantom_ice_cream",
+			"display_name": "Phantom Ice Cream",
+			"ingredients": [
+				"milk",
+				"sugar"
+			],
+			"required_customer_permits": [
+				"soul_consumption_authorization"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "kraken_sashimi",
+			"display_name": "Kraken Sashimi",
+			"ingredients": [
+				"shrimp_crackers"
+			],
+			"required_customer_permits": [
+				"aquatic_import_permit"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "frozen_fruit_parfait",
+			"display_name": "Frozen Fruit Parfait",
+			"ingredients": [
+				"ice",
+				"sun_dried_fruit",
+				"milk",
+				"sugar"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "tundra_hearty_stew",
+			"display_name": "Tundra Hearty Stew",
+			"ingredients": [
+				"tundra_meat",
+				"potato",
+				"broth"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "sea_depth_platter",
+			"display_name": "Sea Depth Platter",
+			"ingredients": [
+				"deep_sea_crab",
+				"shrimp_crackers"
+			],
+			"required_customer_permits": [
+				"aquatic_import_permit"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "forest_mushroom_soup",
+			"display_name": "Forest Mushroom Soup",
+			"ingredients": [
+				"forest_mushroom",
+				"broth",
+				"salt"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "sun_rice_bowl",
+			"display_name": "Sun Rice Bowl",
+			"ingredients": [
+				"sun_rice",
+				"egg",
+				"tundra_meat"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "floating_isle_platter",
+			"display_name": "Floating Isle Platter",
+			"ingredients": [
+				"sky_bird_meat",
+				"sun_dried_fruit"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "iron_citadel_ration_block",
+			"display_name": "Iron Citadel Ration Block",
+			"ingredients": [
+				"tundra_meat",
+				"sun_rice"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "highland_tea_set",
+			"display_name": "Highland Tea Set",
+			"ingredients": [
+				"sun_dried_fruit",
+				"sugar",
+				"milk"
+			],
+			"required_customer_permits": [],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "flame_pudding",
+			"display_name": "Flame Pudding",
+			"ingredients": [
+				"sugar",
+				"ice",
+				"milk"
+			],
+			"required_customer_permits": [
+				"holy_substance_consumption_license"
+			],
+			"required_cafe_licenses": []
+		},
+		{
+			"id": "ritual_feast_plate",
+			"display_name": "Ritual Feast Plate",
+			"ingredients": [
+				"forest_mushroom",
+				"deep_sea_crab",
+				"tundra_meat",
+				"sun_dried_fruit"
+			],
+			"required_customer_permits": [
+				"necromantic_consumption_waiver"
+			],
+			"required_cafe_licenses": [
+				"ritual_cooking_license"
+			]
+		}
+	]
+}

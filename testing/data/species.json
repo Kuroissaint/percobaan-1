@@ -1,0 +1,77 @@
+{
+	"elf": {
+		"display_name": "Elf",
+		"forbidden_tags": [
+			"meat"
+		],
+		"required_tags": [],
+		"description": "Elves follow a strict vegetarian diet."
+	},
+	"orc": {
+		"display_name": "Orc",
+		"forbidden_tags": [
+			"holy"
+		],
+		"required_tags": [
+			"meat"
+		],
+		"description": "Orcs refuse holy food and expect meat in their meals."
+	},
+	"dwarf": {
+		"display_name": "Dwarf",
+		"forbidden_tags": [],
+		"required_tags": [],
+		"preferred_tags": [
+			"spicy"
+		],
+		"description": "Dwarves can eat almost anything but love strong flavors."
+	},
+	"undead": {
+		"display_name": "Undead",
+		"forbidden_tags": [
+			"holy"
+		],
+		"required_tags": [],
+		"ignored_restrictions": [
+			"spoiled"
+		],
+		"description": "Holy food harms undead. They are not bothered by spoiled food."
+	},
+	"dragonborn": {
+		"display_name": "Dragonborn",
+		"forbidden_tags": [],
+		"required_tags": [
+			"meat"
+		],
+		"description": "Dragonborn prefer protein-rich meals."
+	},
+	"halfling": {
+		"display_name": "Halfling",
+		"forbidden_tags": [
+			"spicy"
+		],
+		"required_tags": [],
+		"description": "Halflings dislike spicy food."
+	},
+	"tiefling": {
+		"display_name": "Tiefling",
+		"forbidden_tags": [
+			"holy"
+		],
+		"required_tags": [],
+		"preferred_tags": [
+			"fire",
+			"spicy"
+		],
+		"description": "Tieflings avoid holy substances and enjoy fiery foods."
+	},
+	"gnome": {
+		"display_name": "Gnome",
+		"forbidden_tags": [],
+		"required_tags": [],
+		"preferred_tags": [
+			"sweet"
+		],
+		"description": "Gnomes have a sweet tooth."
+	}
+}

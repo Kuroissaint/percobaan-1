@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://lhtdyxnamwxk"]
+
+[ext_resource type="Script" uid="uid://dy6xf4mv2mqhy" path="res://scripts/coba2/game_window.gd" id="1_krvmk"]
+
+[node name="GameWindow" type="Control" unique_id=300934083]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_krvmk")
+
+[node name="TitleBar" type="ColorRect" parent="." unique_id=726438673]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="TitleBar" unique_id=1992217363]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CloseButton" type="Button" parent="TitleBar" unique_id=676010321]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1299371467]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

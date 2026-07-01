@@ -1,0 +1,9 @@
+~ start
+if race == "Elf"
+	Pelanggan: Aku alergi serbuk sari, ada ramuan yang aman?
+elif race == "Orc"
+	Pelanggan: Kasih yang paling kuat ya, jangan yang lemah!
+else
+	Pelanggan: Ada rekomendasi ramuan?
+endif
+=> END
