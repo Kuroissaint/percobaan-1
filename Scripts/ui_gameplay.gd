@@ -26,16 +26,17 @@ var _game_manager: Node        = null
 var _selected_food_id: String  = ""
 var _awaiting_result: bool     = false
 
+# [PERBAIKAN 1]: Mengubah "assets/foods" menjadi "Assets/Foods" dan menghapus spasi
 const FOOD_ICONS: Dictionary = {
-	"tacos":             "res://assets/foods/tacos.png",
-	"ramen":             "res://assets/foods/ramen.png",
-	"hamburger_steak":   "res://assets/foods/hamburger_steak .png",
-	"fire":              "res://assets/foods/fire.png",
-	"cake":              "res://assets/foods/cake.png",
-	"holy_water":        "res://assets/foods/Water.png",
-	"english_breakfast": "res://assets/foods/English Breakfast.png",
-	"katsudon":          "res://assets/foods/katsudon.png",
-	"soda":              "res://assets/foods/Soda.png",
+	"tacos":             "res://Assets/Foods/tacos.png",
+	"ramen":             "res://Assets/Foods/ramen.png",
+	"hamburger_steak":   "res://Assets/Foods/hamburger_steak.png",
+	"fire":              "res://Assets/Foods/fire.png",
+	"cake":              "res://Assets/Foods/cake.png",
+	"holy_water":        "res://Assets/Foods/Water.png",
+	"english_breakfast": "res://Assets/Foods/English Breakfast.png",
+	"katsudon":          "res://Assets/Foods/katsudon.png",
+	"soda":              "res://Assets/Foods/Soda.png",
 }
 
 # ---------------------------------------------------------------------------
@@ -69,12 +70,23 @@ func _on_customer_changed(customer: Dictionary) -> void:
 	_set_serving_enabled(false)
 
 	var species_data: Dictionary = customer.get("species_data", {})
+	var species_id: String = str(customer.get("species", "temp")).to_lower()
+	
 	customer_species_label.text = species_data.get("display_name", customer.get("species", "???"))
 	customer_desc_label.text    = species_data.get("description", "")
 
 	var order: Dictionary = customer.get("order", {})
 	order_label.text = order.get("display_name", "???")
 	_update_order_icon(order.get("id", ""))
+
+	# [PERBAIKAN 2]: Logika memuat gambar karakter dinamis dengan pengaman
+	var dynamic_path = "res://Assets/Character/" + species_id + "/" + species_id + "_neutral.png"
+	var fallback_path = "res://Assets/Character/temp/marisa.png"
+	
+	if ResourceLoader.exists(dynamic_path):
+		character_sprite.texture = load(dynamic_path)
+	else:
+		character_sprite.texture = load(fallback_path)
 
 	selected_label.text = "Selected: —"
 	_build_menu()
@@ -145,11 +157,14 @@ func _set_state_text(text: String) -> void:
 
 func _update_order_icon(food_id: String) -> void:
 	if FOOD_ICONS.has(food_id):
-		order_icon.texture = load(FOOD_ICONS[food_id])
-		order_icon.show()
-	else:
-		order_icon.texture = null
-		order_icon.hide()
+		var icon_path = FOOD_ICONS[food_id]
+		if ResourceLoader.exists(icon_path):
+			order_icon.texture = load(icon_path)
+			order_icon.show()
+			return
+	
+	order_icon.texture = null
+	order_icon.hide()
 
 
 func _build_menu() -> void:
@@ -166,6 +181,16 @@ func _build_menu() -> void:
 		btn.autowrap_mode          = TextServer.AUTOWRAP_WORD
 
 		var food_id: String = food.get("id", "")
+		
+		# [PERBAIKAN 3]: Memunculkan icon makanan ke dalam tombol
+		if FOOD_ICONS.has(food_id):
+			var icon_path = FOOD_ICONS[food_id]
+			if ResourceLoader.exists(icon_path):
+				btn.icon = load(icon_path)
+				btn.expand_icon = true
+				btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+				btn.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
+
 		btn.pressed.connect(func(): _select_food(food_id, btn.text))
 		menu_grid.add_child(btn)
 
