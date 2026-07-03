@@ -8,9 +8,6 @@ func _ready() -> void:
 	# Memastikan mouse muncul saat berada di menu utama
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	# --- BAGIAN BARU: MENYAMBUNGKAN TOMBOL LEWAT KODE ---
-	# Ambil referensi tombol. 
-	# PENTING: Ganti tulisan di dalam tanda kutip dengan jalur (path) yang sesuai di panel Scene kamu.
 	var start_btn = get_node("Option panel/VBoxContainer/StartButton") 
 	var setting_btn = get_node("Option panel/VBoxContainer/SettingButton")
 	var exit_btn = get_node("Option panel/VBoxContainer/ExitButton")

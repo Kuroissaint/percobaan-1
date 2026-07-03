@@ -26,7 +26,6 @@ var _game_manager: Node        = null
 var _selected_food_id: String  = ""
 var _awaiting_result: bool     = false
 
-# [PERBAIKAN 1]: Mengubah "assets/foods" menjadi "Assets/Foods" dan menghapus spasi
 const FOOD_ICONS: Dictionary = {
 	"tacos":             "res://Assets/Foods/tacos.png",
 	"ramen":             "res://Assets/Foods/ramen.png",
@@ -79,7 +78,6 @@ func _on_customer_changed(customer: Dictionary) -> void:
 	order_label.text = order.get("display_name", "???")
 	_update_order_icon(order.get("id", ""))
 
-	# [PERBAIKAN 2]: Logika memuat gambar karakter dinamis dengan pengaman
 	var dynamic_path = "res://Assets/Character/" + species_id + "/" + species_id + "_neutral.png"
 	var fallback_path = "res://Assets/Character/temp/marisa.png"
 	
@@ -182,7 +180,6 @@ func _build_menu() -> void:
 
 		var food_id: String = food.get("id", "")
 		
-		# [PERBAIKAN 3]: Memunculkan icon makanan ke dalam tombol
 		if FOOD_ICONS.has(food_id):
 			var icon_path = FOOD_ICONS[food_id]
 			if ResourceLoader.exists(icon_path):
