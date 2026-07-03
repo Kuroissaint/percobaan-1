@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceg5k4eht3nw7"
-path="res://.godot/imported/marisa.png-b8802ab7c222cac6ff5b32f928b5e56a.ctex"
+path="res://.godot/imported/marisa.png-f639a3f774d0bc679579d67d36624d4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/temp/marisa.png"
-dest_files=["res://.godot/imported/marisa.png-b8802ab7c222cac6ff5b32f928b5e56a.ctex"]
+source_file="res://Assets/Character/temp/marisa.png"
+dest_files=["res://.godot/imported/marisa.png-f639a3f774d0bc679579d67d36624d4a.ctex"]
 
 [params]
 

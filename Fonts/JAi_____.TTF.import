@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c0ne7gqm5ntui"
-path="res://.godot/imported/JAi_____.TTF-39883ca165eec25ab78021645599d512.fontdata"
+path="res://.godot/imported/JAi_____.TTF-ac72982acae7b62642cf88333c4d1905.fontdata"
 
 [deps]
 
-source_file="res://fonts/JAi_____.TTF"
-dest_files=["res://.godot/imported/JAi_____.TTF-39883ca165eec25ab78021645599d512.fontdata"]
+source_file="res://Fonts/JAi_____.TTF"
+dest_files=["res://.godot/imported/JAi_____.TTF-ac72982acae7b62642cf88333c4d1905.fontdata"]
 
 [params]
 

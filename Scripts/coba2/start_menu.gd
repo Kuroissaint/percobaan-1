@@ -8,6 +8,9 @@ func _ready() -> void:
 	# Memastikan mouse muncul saat berada di menu utama
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+	# --- BAGIAN BARU: MENYAMBUNGKAN TOMBOL LEWAT KODE ---
+	# Ambil referensi tombol. 
+	# PENTING: Ganti tulisan di dalam tanda kutip dengan jalur (path) yang sesuai di panel Scene kamu.
 	var start_btn = get_node("Option panel/VBoxContainer/StartButton") 
 	var setting_btn = get_node("Option panel/VBoxContainer/SettingButton")
 	var exit_btn = get_node("Option panel/VBoxContainer/ExitButton")
@@ -19,20 +22,22 @@ func _ready() -> void:
 	# -----------------------------------------------------
 
 # Fungsi untuk tombol Start/Play
-#func _on_start_button_pressed() -> void:
-	#if ResourceLoader.exists(SCENE_GAMEPLAY):
-		#get_tree().change_scene_to_file(SCENE_GAMEPLAY)
-	#else:
-		#push_error("Gagal memuat: Scene gameplay tidak ditemukan di " + SCENE_GAMEPLAY)
-
-# Fungsi untuk tombol Start/Play
 func _on_start_button_pressed() -> void:
-	# Memunculkan pesan di konsol untuk ngetes klik
-	print("YES! TOMBOL START BERHASIL DIKLIK!") 
+	# 1. Ambil referensi node AnimatedSprite2D pintu
+	var pintu = get_node("Door Menu/buka_pintu")
 	
-	# Memaksa pindah scene
-	get_tree().change_scene_to_file("res://Scenes/gameplay.tscn")
+	# 2. Mainkan animasinya!
+	pintu.play("buka_pintu")
 	
+	# 3. Minta Godot untuk menunda jalannya kode sampai animasi selesai
+	await pintu.animation_finished
+	
+	# 4. Setelah pintunya terbuka penuh (animasi selesai), baru pindah scene!
+	if ResourceLoader.exists(SCENE_GAMEPLAY):
+		get_tree().change_scene_to_file(SCENE_GAMEPLAY)
+	else:
+		push_error("Gagal memuat: Scene gameplay tidak ditemukan di " + SCENE_GAMEPLAY)
+		
 # Fungsi untuk tombol Setting
 func _on_setting_button_pressed() -> void:
 	if ResourceLoader.exists(SCENE_SETTING):

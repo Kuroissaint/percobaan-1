@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2s0n4v50dwdg"
-path="res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"
+uid="uid://c8wfql75vfvnv"
+path="res://.godot/imported/SettingButton.png-529c3278abf54773cdd3201174bdbbc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Foods/ramen.png"
-dest_files=["res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"]
+source_file="res://Assets/Menu/SettingButton.png"
+dest_files=["res://.godot/imported/SettingButton.png-529c3278abf54773cdd3201174bdbbc8.ctex"]
 
 [params]
 

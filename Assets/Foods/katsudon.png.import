@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf76gsscmp2dy"
-path="res://.godot/imported/katsudon.png-fe1c5ec468c1cdc430db7452625e8aa2.ctex"
+path="res://.godot/imported/katsudon.png-8197b4823112140fd09818d04695e8bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/foods/katsudon.png"
-dest_files=["res://.godot/imported/katsudon.png-fe1c5ec468c1cdc430db7452625e8aa2.ctex"]
+source_file="res://Assets/Foods/katsudon.png"
+dest_files=["res://.godot/imported/katsudon.png-8197b4823112140fd09818d04695e8bd.ctex"]
 
 [params]
 

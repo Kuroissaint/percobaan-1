@@ -1,101 +1,93 @@
 [gd_scene format=3 uid="uid://6jjlhwi2tblg"]
 
-[ext_resource type="Script" uid="uid://drva8r1s8oyn6" path="res://scripts/GameManager.gd" id="1_glv2v"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="2_ui"]
-[ext_resource type="Texture2D" path="res://assets/background/background.png" id="3_bg"]
-[ext_resource type="Texture2D" path="res://assets/character/temp/marisa.png" id="4_char"]
+[ext_resource type="Script" uid="uid://drva8r1s8oyn6" path="res://Scripts/GameManager.gd" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cghy1637gftv3" path="res://scripts/ui.gd" id="2_ui"]
+[ext_resource type="Texture2D" uid="uid://powb7oxq186l" path="res://Assets/Background/backgroundBar.png" id="3_kwrm5"]
+[ext_resource type="Texture2D" uid="uid://ceg5k4eht3nw7" path="res://assets/character/temp/marisa.png" id="4_char"]
 
-; ── Styles ──────────────────────────────────────────────────────────────────
+[sub_resource type="StyleBoxFlat" id="SB_score"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 4.0
+bg_color = Color(0.05, 0.05, 0.1, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_state"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.55)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="SB_panel_left"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
 bg_color = Color(0.08, 0.08, 0.12, 0.88)
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
-content_margin_left = 12.0
-content_margin_right = 12.0
-content_margin_top = 12.0
-content_margin_bottom = 12.0
-
-[sub_resource type="StyleBoxFlat" id="SB_panel_right"]
-bg_color = Color(0.08, 0.08, 0.12, 0.88)
-corner_radius_top_left = 12
-corner_radius_bottom_left = 12
-content_margin_left = 12.0
-content_margin_right = 12.0
-content_margin_top = 12.0
-content_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxFlat" id="SB_order"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
 bg_color = Color(0.12, 0.12, 0.18, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.35, 0.6, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
-corner_radius_bottom_left = 10
 corner_radius_bottom_right = 10
-border_width_left = 2
-border_width_right = 2
-border_width_top = 2
-border_width_bottom = 2
-border_color = Color(0.4, 0.35, 0.6, 1.0)
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 8.0
-content_margin_bottom = 8.0
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="SB_feedback"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
 bg_color = Color(0.2, 0.55, 0.2, 0.92)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
-corner_radius_bottom_left = 8
 corner_radius_bottom_right = 8
-content_margin_left = 8.0
-content_margin_right = 8.0
-content_margin_top = 6.0
-content_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxFlat" id="SB_score"]
-bg_color = Color(0.05, 0.05, 0.10, 0.90)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
 corner_radius_bottom_left = 8
-corner_radius_bottom_right = 8
-content_margin_left = 16.0
-content_margin_right = 16.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="SB_state"]
-bg_color = Color(0.0, 0.0, 0.0, 0.55)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_left = 6
-corner_radius_bottom_right = 6
+[sub_resource type="StyleBoxFlat" id="SB_panel_right"]
 content_margin_left = 12.0
+content_margin_top = 12.0
 content_margin_right = 12.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
+content_margin_bottom = 12.0
+bg_color = Color(0.08, 0.08, 0.12, 0.88)
+corner_radius_top_left = 12
+corner_radius_bottom_left = 12
 
-; ── Scene root ──────────────────────────────────────────────────────────────
+[node name="Gameplay" type="Node2D" unique_id=1094947884]
 
-[node name="Gameplay" type="Node2D"]
-
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=648729729]
 script = ExtResource("1_glv2v")
 
-; ── UI ──────────────────────────────────────────────────────────────────────
-
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1228815004]
 script = ExtResource("2_ui")
 
-; Background — full-screen stretch
-[node name="Background" type="TextureRect" parent="UI"]
+[node name="Background" type="TextureRect" parent="UI" unique_id=741435575]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource("3_bg")
+texture = ExtResource("3_kwrm5")
 stretch_mode = 6
 
-; ── Character sprite (center-bottom) ────────────────────────────────────────
-[node name="CharacterSprite" type="TextureRect" parent="UI"]
+[node name="CharacterSprite" type="TextureRect" parent="UI" unique_id=943292615]
 unique_name_in_owner = true
 anchors_preset = 7
 anchor_left = 0.5
@@ -110,8 +102,7 @@ texture = ExtResource("4_char")
 expand_mode = 1
 stretch_mode = 5
 
-; ── Score bar (top-center) ───────────────────────────────────────────────────
-[node name="ScoreBar" type="PanelContainer" parent="UI"]
+[node name="ScoreBar" type="PanelContainer" parent="UI" unique_id=840455620]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -121,15 +112,14 @@ offset_right = 110.0
 offset_bottom = 46.0
 theme_override_styles/panel = SubResource("SB_score")
 
-[node name="ScoreLabel" type="Label" parent="UI/ScoreBar"]
+[node name="ScoreLabel" type="Label" parent="UI/ScoreBar" unique_id=1694244401]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Score: 0"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 20
 
-; ── State hint (below score) ─────────────────────────────────────────────────
-[node name="StateBar" type="PanelContainer" parent="UI"]
+[node name="StateBar" type="PanelContainer" parent="UI" unique_id=845419617]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -139,154 +129,143 @@ offset_right = 200.0
 offset_bottom = 80.0
 theme_override_styles/panel = SubResource("SB_state")
 
-[node name="StateLabel" type="Label" parent="UI/StateBar"]
+[node name="StateLabel" type="Label" parent="UI/StateBar" unique_id=1617978919]
 unique_name_in_owner = true
+modulate = Color(0.85, 0.85, 0.6, 1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "Waiting for customer..."
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 13
-modulate = Color(0.85, 0.85, 0.6, 1.0)
 
-; ── Left panel: Customer info ─────────────────────────────────────────────────
-[node name="LeftPanel" type="PanelContainer" parent="UI"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LeftPanel" type="PanelContainer" parent="UI" unique_id=520131760]
 offset_left = 16.0
 offset_top = 90.0
 offset_right = 296.0
 offset_bottom = 560.0
 theme_override_styles/panel = SubResource("SB_panel_left")
 
-[node name="LeftVBox" type="VBoxContainer" parent="UI/LeftPanel"]
+[node name="LeftVBox" type="VBoxContainer" parent="UI/LeftPanel" unique_id=174959909]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="CustomerTitle" type="Label" parent="UI/LeftPanel/LeftVBox"]
+[node name="CustomerTitle" type="Label" parent="UI/LeftPanel/LeftVBox" unique_id=1257500254]
+modulate = Color(0.6, 0.6, 0.65, 1)
 layout_mode = 2
-text = "CUSTOMER"
 theme_override_font_sizes/font_size = 11
-modulate = Color(0.6, 0.6, 0.65, 1.0)
+text = "CUSTOMER"
 
-[node name="CustomerSpeciesLabel" type="Label" parent="UI/LeftPanel/LeftVBox"]
+[node name="CustomerSpeciesLabel" type="Label" parent="UI/LeftPanel/LeftVBox" unique_id=32996686]
 unique_name_in_owner = true
 layout_mode = 2
-text = "..."
 theme_override_font_sizes/font_size = 24
+text = "..."
 
-[node name="CustomerDescLabel" type="Label" parent="UI/LeftPanel/LeftVBox"]
+[node name="CustomerDescLabel" type="Label" parent="UI/LeftPanel/LeftVBox" unique_id=1346309749]
 unique_name_in_owner = true
+modulate = Color(0.75, 0.75, 0.8, 1)
 layout_mode = 2
-text = ""
-autowrap_mode = 3
 theme_override_font_sizes/font_size = 12
-modulate = Color(0.75, 0.75, 0.8, 1.0)
+autowrap_mode = 3
 
-[node name="Separator1" type="HSeparator" parent="UI/LeftPanel/LeftVBox"]
+[node name="Separator1" type="HSeparator" parent="UI/LeftPanel/LeftVBox" unique_id=9385791]
 layout_mode = 2
 
-; Order box
-[node name="OrderBox" type="PanelContainer" parent="UI/LeftPanel/LeftVBox"]
+[node name="OrderBox" type="PanelContainer" parent="UI/LeftPanel/LeftVBox" unique_id=2080589293]
 layout_mode = 2
 theme_override_styles/panel = SubResource("SB_order")
 
-[node name="OrderVBox" type="VBoxContainer" parent="UI/LeftPanel/LeftVBox/OrderBox"]
+[node name="OrderVBox" type="VBoxContainer" parent="UI/LeftPanel/LeftVBox/OrderBox" unique_id=1072885113]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="OrderTitle" type="Label" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox"]
+[node name="OrderTitle" type="Label" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox" unique_id=1163654335]
+modulate = Color(0.6, 0.6, 0.65, 1)
 layout_mode = 2
-text = "WANTS"
 theme_override_font_sizes/font_size = 11
-modulate = Color(0.6, 0.6, 0.65, 1.0)
+text = "WANTS"
 
-[node name="OrderHBox" type="HBoxContainer" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox"]
+[node name="OrderHBox" type="HBoxContainer" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox" unique_id=234103329]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="OrderIcon" type="TextureRect" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox/OrderHBox"]
+[node name="OrderIcon" type="TextureRect" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox/OrderHBox" unique_id=1852099184]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64.0, 64.0)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 size_flags_vertical = 4
 expand_mode = 1
 stretch_mode = 5
 
-[node name="OrderLabel" type="Label" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox/OrderHBox"]
+[node name="OrderLabel" type="Label" parent="UI/LeftPanel/LeftVBox/OrderBox/OrderVBox/OrderHBox" unique_id=2022031452]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 4
-text = "..."
 theme_override_font_sizes/font_size = 16
+text = "..."
 
-; Feedback panel
-[node name="FeedbackPanel" type="PanelContainer" parent="UI/LeftPanel/LeftVBox"]
+[node name="FeedbackPanel" type="PanelContainer" parent="UI/LeftPanel/LeftVBox" unique_id=663673150]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("SB_feedback")
 
-[node name="FeedbackLabel" type="Label" parent="UI/LeftPanel/LeftVBox/FeedbackPanel"]
+[node name="FeedbackLabel" type="Label" parent="UI/LeftPanel/LeftVBox/FeedbackPanel" unique_id=657583845]
 unique_name_in_owner = true
 layout_mode = 2
-text = ""
-autowrap_mode = 3
 theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
 
-; ── Right panel: Menu ─────────────────────────────────────────────────────────
-[node name="RightPanel" type="PanelContainer" parent="UI"]
+[node name="RightPanel" type="PanelContainer" parent="UI" unique_id=785309666]
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 offset_left = -296.0
 offset_top = 90.0
 offset_right = -16.0
 offset_bottom = 680.0
 theme_override_styles/panel = SubResource("SB_panel_right")
 
-[node name="RightVBox" type="VBoxContainer" parent="UI/RightPanel"]
+[node name="RightVBox" type="VBoxContainer" parent="UI/RightPanel" unique_id=1202925543]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MenuTitle" type="Label" parent="UI/RightPanel/RightVBox"]
+[node name="MenuTitle" type="Label" parent="UI/RightPanel/RightVBox" unique_id=775964273]
+modulate = Color(0.6, 0.6, 0.65, 1)
 layout_mode = 2
-text = "MENU"
 theme_override_font_sizes/font_size = 16
-modulate = Color(0.6, 0.6, 0.65, 1.0)
+text = "MENU"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/RightPanel/RightVBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/RightPanel/RightVBox" unique_id=340124331]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
-custom_minimum_size = Vector2(0.0, 400.0)
 size_flags_vertical = 3
 
-[node name="MenuGrid" type="GridContainer" parent="UI/RightPanel/RightVBox/ScrollContainer"]
+[node name="MenuGrid" type="GridContainer" parent="UI/RightPanel/RightVBox/ScrollContainer" unique_id=1501058557]
 unique_name_in_owner = true
 layout_mode = 2
-columns = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
+columns = 2
 
-[node name="Separator2" type="HSeparator" parent="UI/RightPanel/RightVBox"]
+[node name="Separator2" type="HSeparator" parent="UI/RightPanel/RightVBox" unique_id=1729202591]
 layout_mode = 2
 
-[node name="SelectedLabel" type="Label" parent="UI/RightPanel/RightVBox"]
+[node name="SelectedLabel" type="Label" parent="UI/RightPanel/RightVBox" unique_id=1583186530]
 unique_name_in_owner = true
+modulate = Color(0.8, 0.9, 0.8, 1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "Selected: —"
-theme_override_font_sizes/font_size = 13
-modulate = Color(0.8, 0.9, 0.8, 1.0)
 
-[node name="ServeButton" type="Button" parent="UI/RightPanel/RightVBox"]
+[node name="ServeButton" type="Button" parent="UI/RightPanel/RightVBox" unique_id=171288961]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
-text = "✔  Serve"
-custom_minimum_size = Vector2(0.0, 44.0)
 theme_override_font_sizes/font_size = 16
+text = "✔  Serve"
 
-[node name="SkipButton" type="Button" parent="UI/RightPanel/RightVBox"]
+[node name="SkipButton" type="Button" parent="UI/RightPanel/RightVBox" unique_id=17081639]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
 layout_mode = 2
-text = "Skip Customer"
-custom_minimum_size = Vector2(0.0, 34.0)
 theme_override_font_sizes/font_size = 13
+text = "Skip Customer"

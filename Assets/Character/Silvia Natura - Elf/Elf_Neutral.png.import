@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2s0n4v50dwdg"
-path="res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"
+uid="uid://cuqxtcv1imima"
+path="res://.godot/imported/Elf_Neutral.png-4c5b0d8626cff4de027cc3bd647ec24f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Foods/ramen.png"
-dest_files=["res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"]
+source_file="res://Assets/Character/Silvia Natura - Elf/Elf_Neutral.png"
+dest_files=["res://.godot/imported/Elf_Neutral.png-4c5b0d8626cff4de027cc3bd647ec24f.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blfa2gajuurru"
-path="res://.godot/imported/English Breakfast.png-77d6c4a90b51fc8cc3922bddc93f2b4b.ctex"
+path="res://.godot/imported/English Breakfast.png-15175626f22e753fc5b3390bb09110b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/foods/English Breakfast.png"
-dest_files=["res://.godot/imported/English Breakfast.png-77d6c4a90b51fc8cc3922bddc93f2b4b.ctex"]
+source_file="res://Assets/Foods/English Breakfast.png"
+dest_files=["res://.godot/imported/English Breakfast.png-15175626f22e753fc5b3390bb09110b0.ctex"]
 
 [params]
 

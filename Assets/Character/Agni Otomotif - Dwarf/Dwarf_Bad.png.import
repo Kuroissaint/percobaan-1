@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2s0n4v50dwdg"
-path="res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"
+uid="uid://covhbdp1vmi26"
+path="res://.godot/imported/Dwarf_Bad.png-bd04052eafd15bbdd261ed26b2f16e55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Foods/ramen.png"
-dest_files=["res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"]
+source_file="res://Assets/Character/Agni Otomotif - Dwarf/Dwarf_Bad.png"
+dest_files=["res://.godot/imported/Dwarf_Bad.png-bd04052eafd15bbdd261ed26b2f16e55.ctex"]
 
 [params]
 

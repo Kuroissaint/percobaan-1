@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2s0n4v50dwdg"
-path="res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"
+uid="uid://powb7oxq186l"
+path="res://.godot/imported/backgroundBar.png-c9fabca0d7c547f9fdb6a841ca4c898b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Foods/ramen.png"
-dest_files=["res://.godot/imported/ramen.png-54a883f19d6bd2cde9e33d3dc1534fb8.ctex"]
+source_file="res://Assets/Background/backgroundBar.png"
+dest_files=["res://.godot/imported/backgroundBar.png-c9fabca0d7c547f9fdb6a841ca4c898b.ctex"]
 
 [params]
 
